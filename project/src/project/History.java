@@ -35,6 +35,7 @@ public class History {
 			lines = line;
 			line = reader.readLine();
 		}
+		reader.close();
 		
 		return lines;
 		
