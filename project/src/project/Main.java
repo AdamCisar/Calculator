@@ -6,11 +6,10 @@ import java.io.IOException;
 
 class Main {
   
-	Calculator calc;
 	
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 	  
-	Calculator calc = new Calculator();
+	new Calculator();
 	
 
 	BufferedReader reader = new BufferedReader(new FileReader(
@@ -21,7 +20,7 @@ class Main {
 		// read next line
 		line = reader.readLine();
 	
-	reader.close();
+
   }
 }
 
