@@ -1,13 +1,19 @@
 package project;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import javax.swing.JTextField;
+
+
 public class History {
 	
-
+	static String line;
+	
 	public static void write(double num1, double num2, char operator, double result) throws IOException {
 		File file = new File("history.txt");
 		FileOutputStream fOut = new FileOutputStream(file, true);
@@ -21,5 +27,22 @@ public class History {
 		
 		osw.flush();
 		osw.close();
+	}
+	
+	public static void show() throws IOException {
+		
+		BufferedReader reader = new BufferedReader(new FileReader(
+				"C:\\Users\\adamc\\git\\calculator\\project\\history.txt"));
+		
+		String line = reader.readLine();
+		while (line != null) {
+			
+			System.out.println(line);
+	
+			line = reader.readLine();
+			
+			
+			
+	  }
 	}
 }

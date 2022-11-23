@@ -2,13 +2,10 @@ package project;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.Serializable;
 
-public class Calculator extends CalculatorFrame implements ActionListener, Serializable {
+public class Calculator extends CalculatorFrame implements ActionListener {
 	
 	private double num1, num2, result;
 	private	char operator;
@@ -21,6 +18,16 @@ public class Calculator extends CalculatorFrame implements ActionListener, Seria
 				textfield.setText(textfield.getText().concat(String.valueOf(i)));
 			}
 		}
+		
+		if (e.getSource() == hisButton) {
+			try {
+				History.show();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}	
+		
 		
 		if (e.getSource() == decButton) {
 			textfield.setText(textfield.getText().concat("."));
@@ -102,6 +109,7 @@ public class Calculator extends CalculatorFrame implements ActionListener, Seria
 		History.write(num1, num2, operator, result);
 
 		textfield.setText(String.valueOf(result));
+		
 		}
 	
 }

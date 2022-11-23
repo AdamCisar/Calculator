@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 public class CalculatorFrame extends JFrame{
 	
 	JButton[] numbers = new JButton[10];
-	JButton delButton, decButton, equalButton, addButton, subButton, multiButton, divButton, clrButton;
+	JButton delButton, decButton, equalButton, addButton, subButton, multiButton, divButton, clrButton, hisButton;
 	JTextField textfield = new JTextField();
 	
 	CalculatorFrame(){
@@ -41,6 +41,7 @@ public class CalculatorFrame extends JFrame{
 		multiButton = createButton("*");
 		equalButton = createButton("=");
 		clrButton = createButton("C");
+		hisButton = createButton("H");
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(150, 120, 180, 180);
@@ -73,6 +74,7 @@ public class CalculatorFrame extends JFrame{
 		OpPanel.add(divButton);
 		OpPanel.add(subButton);
 		OpPanel.add(clrButton);
+		OpPanel.add(hisButton);
 		
 		this.add(OpPanel);
 		this.add(equalPanel);
