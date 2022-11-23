@@ -3,13 +3,11 @@ package project;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.io.Serializable;
 
 public class Calculator extends CalculatorFrame implements ActionListener {
 	
 	private double num1, num2, result;
 	private	char operator;
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -21,7 +19,7 @@ public class Calculator extends CalculatorFrame implements ActionListener {
 		
 		if (e.getSource() == hisButton) {
 			try {
-				History.show();
+				textfield.setText(History.show());
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

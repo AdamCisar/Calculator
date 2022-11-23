@@ -7,12 +7,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import javax.swing.JTextField;
-
-
 public class History {
-	
-	static String line;
+
+	static String lines; 
 	
 	public static void write(double num1, double num2, char operator, double result) throws IOException {
 		File file = new File("history.txt");
@@ -29,20 +26,18 @@ public class History {
 		osw.close();
 	}
 	
-	public static void show() throws IOException {
-		
+	public static String show() throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(
 				"C:\\Users\\adamc\\git\\calculator\\project\\history.txt"));
 		
 		String line = reader.readLine();
 		while (line != null) {
-			
-			System.out.println(line);
-	
+			lines = line;
 			line = reader.readLine();
-			
-			
-			
-	  }
-	}
+		}
+		
+		return lines;
+		
+	}  
+	
 }
